@@ -1,0 +1,32 @@
+<?php
+
+$fichier='mezi_ferhatxml.xml';
+$contenu=simplexml_load_file($fichier);
+//echo'<pre>';
+//print_r($contenu);
+//echo'</pre>';
+
+
+echo"affichage des domain".'<br>'.'<br>'.'<br>';
+foreach ($contenu as $ESTYA) {
+	echo 'DOMAINS:'.$ESTYA->getName().'<br>'.'<br>';
+}
+
+
+
+
+echo"afficher les formation des domain".'<br>'.'<br>'.'<br>';
+foreach ($contenu as $ESTYA) {
+	echo 'DOMAINS:'.$ESTYA->getName().'<br>';
+	foreach ($ESTYA as $e ) {
+	echo 'sous formation:'.$e->getName().'<br>';
+}
+}
+echo"afficher la presentation du commerce international";
+foreach ($contenu as $ESTYA) {
+	echo 'DOMAINS:'.$ESTYA->getName().'<br>'.'<br>'.'<br>'.'<br>'.'<br>'.'<br>'.'<br>'.'<br>'.'<br>';
+	foreach ($ESTYA as $e ) {
+	echo 'sous formation:'.$e->getName().'<br>'.'<br>'.'<br>'.'<br>'.'<br>'.'<br>'.'<br>';
+	echo 'presentation:'.$e->Presentation.'<br>'.'<br>'.'<br>'.'<br>'.'<br>'.'<br>'.'<br>'.'<br>';
+}}
+?>
